@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.engineer.common.easyquery.test.App" table="test_app">
+		<id name="id" type="java.lang.Integer">
+			<column name="id">
+				<comment>主键-ID序列号</comment>
+			</column>
+			<generator class="native">
+				<param name="sequence">S_app_entry</param>
+				<param name="parameters">start with 100 increment by 1</param>
+			</generator>
+		</id>
+
+		<property name="code" type="string">
+			<column name="code">
+				<comment>app_code</comment>
+			</column>
+		</property>
+
+		<property name="catalog" type="java.lang.Integer">
+			<column name="catalog" not-null="true">
+				<comment>类别（0：目录，1：应用）</comment>
+			</column>
+		</property>
+
+		<property name="name" type="string">
+			<column name="name" length="128" not-null="true">
+				<comment>名称</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
