@@ -1,4 +1,4 @@
-package com.engineer.common.easyquery.test;
+package com.engineer.common.easyquery.impl;
 
 import java.util.List;
 import org.hibernate.Criteria;
